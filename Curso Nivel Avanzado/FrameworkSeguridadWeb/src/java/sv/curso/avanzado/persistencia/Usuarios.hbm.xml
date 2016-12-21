@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-30-2013 10:46:35 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="sv.curso.avanzado.persistencia.Usuarios" table="USUARIOS" schema="SEGURIDAD">
+        <id name="usuario" type="string">
+            <column name="USUARIO" length="25" />
+            <generator class="assigned" />
+        </id>
+        <property name="primerApellido" type="string">
+            <column name="PRIMER_APELLIDO" length="25" not-null="true" />
+        </property>
+        <property name="segundoApellido" type="string">
+            <column name="SEGUNDO_APELLIDO" length="25" not-null="true" />
+        </property>
+        <property name="nombres" type="string">
+            <column name="NOMBRES" length="50" not-null="true" />
+        </property>
+        <property name="tipoDocumento" type="string">
+            <column name="TIPO_DOCUMENTO" length="1" not-null="true" />
+        </property>
+        <property name="nombreDocumento" type="string">
+            <column name="NOMBRE_DOCUMENTO" length="10" not-null="true" />
+        </property>
+        <property name="noNit" type="string">
+            <column name="NO_NIT" length="20" not-null="true" />
+        </property>
+        <property name="codigoPais" type="string">
+            <column name="CODIGO_PAIS" length="2" not-null="true" />
+        </property>
+        <property name="codigoDepartamento" type="string">
+            <column name="CODIGO_DEPARTAMENTO" length="2" not-null="true" />
+        </property>
+        <property name="codigoMunicipio" type="string">
+            <column name="CODIGO_MUNICIPIO" length="4" not-null="true" />
+        </property>
+        <property name="direccionParticular" type="string">
+            <column name="DIRECCION_PARTICULAR" length="200" />
+        </property>
+        <property name="telefonoParticular" type="string">
+            <column name="TELEFONO_PARTICULAR" length="8" />
+        </property>
+        <property name="direccionTrabajoUsuario" type="string">
+            <column name="DIRECCION_TRABAJO_USUARIO" length="200" />
+        </property>
+        <property name="telefonoTrabajoUsuario" type="string">
+            <column name="TELEFONO_TRABAJO_USUARIO" length="8" />
+        </property>
+        <property name="faxUsuario" type="string">
+            <column name="FAX_USUARIO" length="8" />
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="CORREO_ELECTRONICO" length="50" not-null="true" />
+        </property>
+        <property name="estadoUsuario" type="string">
+            <column name="ESTADO_USUARIO" length="1" not-null="true" />
+        </property>
+        <property name="fechaCreacion" type="date">
+            <column name="FECHA_CREACION" length="7" not-null="true" />
+        </property>
+        <property name="tipoUsuario" type="string">
+            <column name="TIPO_USUARIO" length="1"/>
+        </property>
+    </class>
+</hibernate-mapping>

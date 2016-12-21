@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:XE</property>
+    <property name="hibernate.connection.username">seguridad</property>
+    <property name="hibernate.connection.password">admin</property>
+    <mapping resource="sv/curso/avanzado/persistencia/Departamentos.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/Opciones.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/Roles.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/Municipios.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/TiposDocumentos.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/Usuarios.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/Paises.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/TiposUsuario.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/Sistemas.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/EstadosUsuario.hbm.xml"/>
+    <mapping resource="sv/curso/avanzado/persistencia/UsuariosRol.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
