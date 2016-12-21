@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro de Contribuyentes</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Registro de Contribuyentes">
+                <p:messages id="msgs"/>
+                <h:panelGrid columns="3" cellpadding="5">
+                    <h:outputText value="No Nit: "/>
+                    <p:inputMask id="no_nit" value="#{beanContribuyentes.noNit}" mask="9999-999999-999-9" required="true" 
+                                 requiredMessage="No nit es requerido...">
+                    </p:inputMask>
+                    <p:message id="no_nit_error" for="no_nit"/>
+                    
+                    <h:outputText value="Nombre Contribuyente: "/>
+                    <p:inputText id="nombre_contribuyente" value="#{beanContribuyentes.nombreContribuyente}" required="true" 
+                                 requiredMessage="Nombre Contribuyente es requerido...">
+                    </p:inputText>
+                    <p:message id="nombre_contribuyente_error" for="nombre_contribuyente"/>
+                    
+                    <h:outputText value="Razon Social: "/>
+                    <p:inputText id="razon_social" value="#{beanContribuyentes.razonSocial}" required="true" 
+                                 requiredMessage="Razon Social es requerida...">
+                   </p:inputText>
+                    <p:message id="razon_social_error" for="razon_social"/>
+                    
+                    <h:outputText value="Representante Legal: "/>
+                    <p:inputText id="representante_legal" value="#{beanContribuyentes.representanteLegal}" required="true" 
+                                 requiredMessage="Representante legal es requerido...">
+                    </p:inputText>
+                    <p:message id="representante_legal_error" for="representante_legal"/>
+                    
+                    <h:outputText value="Renta Anual: "/>
+                    <p:inputMask id="renta_anual" value="#{beanContribuyentes.rentaAnual}" mask="9999.99" required="true" 
+                                 requiredMessage="Renta Anual es requerida...">
+                    </p:inputMask>
+                    <p:message id="renta_anual_error" for="renta_anual"/>
+                    
+                    <h:outputText value="Fecha Registro: "/>
+                    <p:calendar id="fecha_registro" value="#{beanContribuyentes.fechaRegistro}" showOn="button" 
+                                 required="true" locale="es"
+                                navigator="true" requiredMessage="La fecha de registro es requerida..." pattern="dd/MM/yyyy"/>
+                    <p:message id="fecha_registro_error" for="fecha_registro"/>
+                    
+                    <h:outputText value="Estado Contribuyente: "/>
+                    <h:selectOneMenu value="#{beanContribuyentes.estado}">
+                        <f:selectItem itemValue="A" itemLabel="Activo"/>
+                        <f:selectItem itemValue="I" itemLabel="Inactivo"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:commandButton value="Guadar" action="#{beanContribuyentes.guardarContribuyente()}"/>
+                    <h:commandButton value="Limpiar" action="#{beanContribuyentes.limpiarContribuyentes()}"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

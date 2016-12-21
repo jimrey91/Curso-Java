@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Calendario</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:panel header="Calendario">
+                <p:messages id="msgs"/>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Fecha Registro: "/>
+                    <p:calendar id="fechaClendario" value="#{beanCalendario.fechaCalendario}" pattern="dd/MM/yyyy" showOn="button"/>
+                    <h:commandButton value="Guardar" action="#{beanCalendario.guardarDatos}"/>
+                    <h:commandButton value="Limpiar" action="#{beanCalendario.limpiarDatos}"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+
