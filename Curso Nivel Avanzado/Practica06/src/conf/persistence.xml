@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="Practica06PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>sv.curso.avanzado.persistencia.UsuariosRol</class>
+    <class>sv.curso.avanzado.persistencia.Paises</class>
+    <class>sv.curso.avanzado.persistencia.Departamentos</class>
+    <class>sv.curso.avanzado.persistencia.Opciones</class>
+    <class>sv.curso.avanzado.persistencia.TiposDocumentos</class>
+    <class>sv.curso.avanzado.persistencia.Municipios</class>
+    <class>sv.curso.avanzado.persistencia.Sistemas</class>
+    <class>sv.curso.avanzado.persistencia.Usuarios</class>
+    <class>sv.curso.avanzado.persistencia.Roles</class>
+    <class>sv.curso.avanzado.persistencia.TiposUsuario</class>
+    <class>sv.curso.avanzado.persistencia.EstadosUsuario</class>
+    <class>prueba.procedimientos.Tabla2</class>
+    <class>prueba.procedimientos.Tabla1</class>
+    <class>prueba.procedimientos.Lista</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@127.0.0.1:1521:portal"/>
+      <property name="javax.persistence.jdbc.password" value="admin"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="seguridad"/>
+    </properties>
+  </persistence-unit>
+</persistence>
