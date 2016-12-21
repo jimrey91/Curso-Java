@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Consulta Estudiantes</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:dataTable id="datatable" var="estudiante" value="#{beanConsultaEstudiantes.estudiantes}" paginator="true" rows="0"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} 
+                         {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15">
+                <f:facet name="header">
+                    Paginacion de Datos
+                </f:facet>
+                
+                <p:ajax event="rowSelect" update=":form:display" oncomplete="estudianteDialog.show()"/>
+                
+                <p:column headerText="No Carnet" sortBy="#{estudiante.noCarnet}" 
+                          filterBy="#{estudiante.noCarnet}" id="carnet">#{estudiante.noCarnet}</p:column>
+                
+                <p:column headerText="Apellidos" sortBy="#{estudiante.apellidos}" 
+                          filterBy="#{estudiante.apellidos}" id="apellidos">#{estudiante.apellidos}</p:column>
+                
+                <p:column headerText="Nombres" sortBy="#{estudiante.nombres}" 
+                          filterBy="#{estudiante.nombres}" id="nombres">#{estudiante.nombres}</p:column>
+                
+                <p:column headerText="Codigo Carrera" sortBy="#{estudiante.codigoCarrera}" 
+                          filterBy="#{estudiante.codigoCarrera}" id="carrera">#{estudiante.codigoCarrera}</p:column>
+           </p:dataTable>
+            
+            <p:dialog header="Detalle Estudiante" widgetVar="estudianteDialog" resizable="false" width="200"
+                      showEffect="explode" hideEffect="explode">
+                
+                <h:panelGrid id="display" columns="2" cellpadding="4">
+                    
+                    <h:outputText value="Carnet"/>
+                    <h:outputText value="#{beanConsultaEstudiantes.selectedEstudiante.noCarnet}" id="Carnet"/>
+                    
+                    <h:outputText value="Apellidos"/>
+                    <h:outputText value="#{beanConsultaEstudiantes.selectedEstudiante.apellidos}" id="Apellidos"/>
+                    
+                    <h:outputText value="Nombres"/>
+                    <h:outputText value="#{beanConsultaEstudiantes.selectedEstudiante.nombres}" id="Nombres"/>
+                    
+                    <h:outputText value="Carrera"/>
+                    <h:outputText value="#{beanConsultaEstudiantes.selectedEstudiante.codigoCarrera}" id="carrera"/>
+                    
+                </h:panelGrid>
+            </p:dialog>
+            </h:form>
+    </h:body>
+</html>
+
